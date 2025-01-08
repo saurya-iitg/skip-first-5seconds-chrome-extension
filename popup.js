@@ -7,6 +7,7 @@ document.getElementById("skipButton").addEventListener("click", () => {
           const video = document.querySelector("video");
           if (video) {
             video.currentTime += 5;
+            console.log("Skipped 5 seconds!");
           } else {
             alert("No video player found!");
           }
