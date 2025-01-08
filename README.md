@@ -1,4 +1,5 @@
-> **This extension is currently in Development will be released soon.**
+>## **This extension is currently in Development will be released soon.**
+> 
 This Chrome extension allows you to automatically skip the first few seconds of videos playing on any website. first 5 seconds 
 
 ## Installation
