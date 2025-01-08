@@ -1,22 +1,22 @@
-This extension is currently in Development will be released soon.
+> **This extension is currently in Development will be released soon.**
 This Chrome extension allows you to automatically skip the first few seconds of videos playing on any website. first 5 seconds 
 
 ## Installation
 
-1. Clone this repository:
+1. **Clone this repository:**
   
    git clone https://github.com/saurya-iitg/skip-first-5seconds-chrome-extension.git
-Navigate to the extension directory:
+2.**Navigate to the extension directory:**
 
 Bash
 
 cd video-skip-extension
-Load the extension in Chrome:
+3. **Load the extension in Chrome:**
 
 Open Chrome and go to chrome://extensions/
 Enable "Developer mode" in the top right corner.
 Click "Load unpacked" and select the video-skip-extension directory.   
-Usage
+## Usage
 Set the skip duration:
 
 Open the extension's options page (usually accessible by clicking the extension icon in the toolbar and selecting "Options").
