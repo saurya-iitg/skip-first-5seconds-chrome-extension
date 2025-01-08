@@ -3,29 +3,21 @@
     "name": "Video Skipper",
     "version": "1.0",
     "description": "Fast forward and skip the last few seconds of videos automatically.",
-    "permissions": [
-      "activeTab",
-      "webRequest",
-      "webRequestBlocking"
-    ],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "icons": {
-      "16": "logo.png",
-      "48": "logo.png",
-      "128": "logo.png"
-    },
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": ["*://www.coursera.org/*"],
     "action": {
-      "default_icon": "logo.png",
-      "default_popup": "popup.html"
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "logo.png",
+        "48": "logo.png",
+        "128": "logo.png"
+      }
     },
     "content_scripts": [
       {
-        "matches": ["<all_urls>"],
+        "matches": ["*://www.coursera.org/*"],
         "js": ["content.js"]
       }
-    ],
-    "options_page": "options.html"
+    ]
   }
   
