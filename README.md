@@ -5,18 +5,19 @@ This Chrome extension allows you to automatically skip the first few seconds of 
 ## Installation
 
 1. **Clone this repository:**
-  
    git clone https://github.com/saurya-iitg/skip-first-5seconds-chrome-extension.git
+   
 2.**Navigate to the extension directory:**
 
-Bash
-
 cd video-skip-extension
+
 3. **Load the extension in Chrome:**
 
 Open Chrome and go to chrome://extensions/
 Enable "Developer mode" in the top right corner.
 Click "Load unpacked" and select the video-skip-extension directory.   
+
+
 ## Usage
 Set the skip duration:
 
