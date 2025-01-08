@@ -1,7 +1,7 @@
 // Function to skip the first 5 seconds of the video
 const skipInitialSeconds = (video) => {
   video.addEventListener("loadedmetadata", () => {
-    if (video.currentTime < 5) {
+    if (video.currentTime <= 5) {
       video.currentTime = 5; // Skip the first 5 seconds
       console.log("Skipped the first 5 seconds");
     }
@@ -29,5 +29,14 @@ const setupVideoSkipper = () => {
   }
 };
 
-// Run the setup function when the script is loaded
-setupVideoSkipper();
+// Observe for video elements in case they are added dynamically
+const observer = new MutationObserver(() => {
+  if (document.querySelector("video")) {
+    console.log("Video found");
+    setupVideoSkipper();
+    observer.disconnect(); // Stop observing once the video is found
+  }
+});
+
+// Start observing the document body for changes
+observer.observe(document.body, { childList: true, subtree: true });
