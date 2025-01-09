@@ -1,49 +1,55 @@
-// Function to skip the first 5 seconds of the video
-const skipInitialSeconds = (video) => {
-  const skipStart = () => {
-    if (video.currentTime < 5) {
-      video.currentTime = 5; // Skip the first 5 seconds
-      console.log("Skipped the first 5 seconds");
-    }
-  };
-  // Ensure the video skips only once at the start
-  video.addEventListener("loadedmetadata", skipStart, { once: true });
-};
-
-// Function to skip the last 5 seconds of the video
-const skipLastSeconds = (video) => {
-  video.addEventListener("timeupdate", () => {
-    if (video.duration - video.currentTime <= 5 && !video.ended) {
-      video.currentTime = video.duration; // Skip to the end
-      console.log("Skipped the last 5 seconds");
-    }
-  });
-};
-
-// Function to handle video setup
-const setupVideoSkipper = (video) => {
-  skipInitialSeconds(video);
-  skipLastSeconds(video);
-};
-
-// Function to wait for the video element
-const waitForVideoElement = () => {
-  const video = document.querySelector("video");
-  if (video) {
-    console.log("Video found, setting up skipper");
-    setupVideoSkipper(video);
-  } else {
-    // Retry until the video element is available
-    setTimeout(waitForVideoElement, 500);
-    console.log("Video not found, retrying...");
-  }
-};
-
-// Start looking for the video element
-waitForVideoElement();
+// Notify the background script to inject the video skipper
+chrome.runtime.sendMessage({ action: "injectVideoSkipper" });
 
 
 // Previous code
+
+// // Function to skip the first 5 seconds of the video
+// const skipInitialSeconds = (video) => {
+//   const skipStart = () => {
+//     if (video.currentTime < 5) {
+//       video.currentTime = 5; // Skip the first 5 seconds
+//       console.log("Skipped the first 5 seconds");
+//     }
+//   };
+//   // Ensure the video skips only once at the start
+//   video.addEventListener("loadedmetadata", skipStart, { once: true });
+// };
+
+// // Function to skip the last 5 seconds of the video
+// const skipLastSeconds = (video) => {
+//   video.addEventListener("timeupdate", () => {
+//     if (video.duration - video.currentTime <= 5 && !video.ended) {
+//       video.currentTime = video.duration; // Skip to the end
+//       console.log("Skipped the last 5 seconds");
+//     }
+//   });
+// };
+
+// // Function to handle video setup
+// const setupVideoSkipper = (video) => {
+//   skipInitialSeconds(video);
+//   skipLastSeconds(video);
+// };
+
+// // Function to wait for the video element
+// const waitForVideoElement = () => {
+//   const video = document.querySelector("video");
+//   if (video) {
+//     console.log("Video found, setting up skipper");
+//     setupVideoSkipper(video);
+//   } else {
+//     // Retry until the video element is available
+//     setTimeout(waitForVideoElement, 500);
+//     console.log("Video not found, retrying...");
+//   }
+// };
+
+// // Start looking for the video element
+// waitForVideoElement();
+
+
+// Previous code of the previous code
 
 
 // // Function to skip the first 5 seconds of the video
